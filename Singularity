@@ -32,7 +32,6 @@ Info: /opt/dticam/README.md
   # Camino dependencies
   apt-get install -y openjdk-8-jre openjdk-8-jdk build-essential
   
-  
   # FSL dependencies incl for fsleyes, h/t https://github.com/MPIB/singularity-fsl
   #    debian vs ubuntu:
   #            libjpeg62-turbo ->  libjpeg-turbo8
@@ -64,7 +63,7 @@ Info: /opt/dticam/README.md
   rm -fr __MACOSX
   mv camino-code-${camver} camino
   cd camino
-  #make
+  make
 
   # Get and install main FSL package
   #fsl_version=5.0.11
