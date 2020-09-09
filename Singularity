@@ -24,11 +24,14 @@ Info: /opt/dticam/README.md
 
   apt-get update
   
-  apt-get install -y zip unzip wget             # Misc tools
-  apt-get install -y binutils xz-utils          # For workaround below
-  apt-get install -y xvfb                       # Headless X11 support
-  apt-get install -y ghostscript imagemagick    # PNG and PDF tools
-  apt-get install -y openjdk-8-jre              # Camino
+  apt-get install -y zip unzip wget                  # Misc tools
+  apt-get install -y binutils xz-utils               # For workaround below
+  apt-get install -y xvfb                            # Headless X11 support
+  apt-get install -y ghostscript imagemagick         # PNG and PDF tools
+  
+  # Camino dependencies
+  apt-get install -y openjdk-8-jre openjdk-8-jdk build-essential
+  
   
   # FSL dependencies incl for fsleyes, h/t https://github.com/MPIB/singularity-fsl
   #    debian vs ubuntu:
@@ -58,9 +61,10 @@ Info: /opt/dticam/README.md
   cd /usr/local
   wget https://sourceforge.net/projects/camino/files/camino-code-${camver}.zip
   unzip camino-code-${camver}.zip
+  rm -fr __MACOSX
   mv camino-code-${camver} camino
   cd camino
-  make
+  #make
 
   # Get and install main FSL package
   #fsl_version=5.0.11
